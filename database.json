@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Carlos_Eduardo",
+      "password": "Stopcar",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "Valdirene_Financiamento",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 3,
+      "username": "Carol_Vendedora",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 4,
+      "username": "Luciano_Vendedor",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 5,
+      "username": "Thales_Vendedor",
+      "password": "StopCar",
+      "role": "seller"
+    }
+  ],
+  "leads": []
+}

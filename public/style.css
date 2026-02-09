@@ -1,0 +1,95 @@
+body.dark {
+  font-family: Arial;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color: white;
+  margin: 0;
+}
+
+/* HEADER */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #0b1220;
+}
+
+.user-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* FORM */
+.form-area {
+  display: flex;
+  gap: 10px;
+  padding: 20px 40px;
+}
+
+.form-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* SEARCH */
+.search {
+  margin: 0 40px 20px;
+  padding: 12px;
+  width: calc(100% - 80px);
+  border-radius: 10px;
+  border: none;
+}
+
+/* CARDS GRID */
+.cards {
+  padding: 0 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(0,0,0,.5);
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+/* STATUS */
+.badge {
+  background: orange;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* BUTTONS */
+.btn {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-right: 5px;
+}
+
+.green { background:#22c55e }
+.blue { background:#3b82f6 }
+.red { background:#ef4444 }
+.yellow { background:#f59e0b }
+
+.actions {
+  margin-top: 12px;
+}

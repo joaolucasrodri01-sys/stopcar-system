@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Carlos_Eduardo",
+      "password": "StopCar",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "Valdirene_Financiamento",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 3,
+      "username": "Carol_Vendedora",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 4,
+      "username": "Luciano_Vendedor",
+      "password": "StopCar",
+      "role": "seller"
+    },
+    {
+      "id": 5,
+      "username": "Thales_Vendedor",
+      "password": "StopCar",
+      "role": "seller"
+    }
+  ],
+  "leads": [
+    {
+      "id": 1770660099522,
+      "nome": "João Lucas",
+      "telefone": "35992446220",
+      "modelo": "VW Nivus",
+      "user": "Carlos_Eduardo"
+    },
+    {
+      "id": 1770660127920,
+      "nome": "Kaique",
+      "telefone": "35992446220",
+      "modelo": "XRE 300",
+      "user": "Carlos_Eduardo"
+    }
+  ]
+}

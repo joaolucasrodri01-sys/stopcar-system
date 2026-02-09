@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StopCar • Leads</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🚗 StopCar System</h2>
+  <div>
+    <button onclick="goDashboard()">Dashboard</button>
+    <button onclick="logout()">Sair</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Novo Cliente</h3>
+
+    <input id="nome" placeholder="Nome">
+    <input id="telefone" placeholder="Telefone">
+    <input id="modelo" placeholder="Modelo desejado">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+  </div>
+
+  <div class="card">
+    <h3>Leads cadastrados</h3>
+    <input id="busca" placeholder="Pesquisar..." onkeyup="listar()">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Modelo</th>
+          <th>Vendedor</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="lista"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
