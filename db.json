@@ -45,6 +45,62 @@
       "telefone": "35992446220",
       "modelo": "XRE 300",
       "user": "Carlos_Eduardo"
+    },
+    {
+      "id": 1770669541469,
+      "nome": "Rayssa",
+      "telefone": "118888888888",
+      "modelo": "VW Nivus",
+      "user": "Carol_Vendedora"
+    },
+    {
+      "id": 1770669548001,
+      "nome": "Clayton",
+      "telefone": "118888888888",
+      "modelo": "Jetta",
+      "user": "Carol_Vendedora"
+    },
+    {
+      "id": 1770669585881,
+      "nome": "EDUARDO JOSE LOURENCO",
+      "telefone": "118888888888",
+      "modelo": "Jeep-Compass",
+      "user": "Thales_Vendedor"
+    },
+    {
+      "id": 1770669628312,
+      "nome": "Juan",
+      "telefone": "3566666666",
+      "modelo": "CIVIC",
+      "user": "Luciano_Vendedor"
+    },
+    {
+      "id": 1770669639868,
+      "nome": "Gabriel",
+      "telefone": "118888888888",
+      "modelo": "Punto",
+      "user": "Luciano_Vendedor"
+    },
+    {
+      "id": 1770669687387,
+      "nome": "Ryan",
+      "telefone": "35992446220",
+      "modelo": "Jeep-Compass",
+      "user": "Valdirene_Financiamento"
+    },
+    {
+      "id": 1770669721755,
+      "nome": "Wladmir",
+      "telefone": "118888888888",
+      "modelo": "XRE 190",
+      "user": "Valdirene_Financiamento"
+    },
+    {
+      "id": 1770669918341,
+      "nome": "Valdirene",
+      "telefone": "35991729585",
+      "modelo": "Hb20",
+      "user": "Carlos_Eduardo"
     }
   ]
 }

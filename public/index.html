@@ -127,21 +127,23 @@
 
     /* ===== LOGIN ===== */
     async function login() {
-      const username = usernameInput.value;
-      const password = passwordInput.value;
+  const username = usernameInput.value;
+  const password = passwordInput.value;
 
-      if (!username || !password) return;
+  if (!username || !password) return;
 
-      btn.innerText = "Entrando...";
-      btn.disabled = true;
+  btn.innerText = "Entrando...";
+  btn.disabled = true;
 
-      const res = await fetch("http://localhost:3000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
+  const res = await fetch("/login", { // ✅ SEM localhost
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password })
+  });
 
-      const data = await res.json();
+  const data = await res.json();
+}
+
 
       if (!data.success) {
         erro.style.display = "block";
@@ -153,7 +155,7 @@
       localStorage.setItem("user", JSON.stringify(data.user));
 
       window.location.href = "dashboard.html";
-    }
+    
 
     /* clique */
     btn.addEventListener("click", login);
@@ -166,3 +168,4 @@
 
 </body>
 </html>
+
