@@ -2,6 +2,8 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>StopCar • Login</title>
 
   <style>
@@ -9,53 +11,69 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
 
       background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
+      padding: 20px;
     }
 
     /* ===== CARD ===== */
     .login-card {
-      width: 340px;
-      padding: 35px;
+      width: 100%;
+      max-width: 360px;
+
+      padding: 35px 28px;
 
       border-radius: 18px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.06);
       backdrop-filter: blur(18px);
 
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
       text-align: center;
+      color: white;
+
+      animation: fade .4s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .logo {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: 48px;
+      margin-bottom: 8px;
     }
 
     h2 {
       margin-bottom: 25px;
-      font-weight: bold;
+      font-size: 22px;
     }
 
     /* ===== INPUTS ===== */
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
+    input {
+      padding: 13px;
       border-radius: 10px;
       border: none;
 
       background: #1e293b;
       color: white;
+      font-size: 14px;
     }
 
     input:focus {
@@ -65,7 +83,7 @@
     /* ===== BUTTON ===== */
     button {
       width: 100%;
-      padding: 12px;
+      padding: 13px;
 
       border-radius: 10px;
       border: none;
@@ -73,9 +91,10 @@
       background: #3b82f6;
       color: white;
       font-weight: bold;
-      cursor: pointer;
+      font-size: 15px;
 
-      transition: 0.2s;
+      cursor: pointer;
+      transition: .2s;
     }
 
     button:hover {
@@ -83,25 +102,34 @@
       background: #2563eb;
     }
 
-    button:active {
-      transform: scale(0.97);
+    button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== ERRO ===== */
+    .erro {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #ef4444;
+      display: none;
+    }
+
     .footer {
       margin-top: 18px;
       font-size: 12px;
-      opacity: 0.6;
+      opacity: .6;
     }
 
-    .erro {
-      margin-top: 10px;
-      color: #ef4444;
-      font-size: 14px;
-      display: none;
+    /* ===== MOBILE EXTRA ===== */
+    @media (max-width: 420px) {
+      .login-card {
+        padding: 28px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="login-card">
@@ -109,69 +137,81 @@
     <div class="logo">🚗</div>
     <h2>StopCar System</h2>
 
-    <input id="username" placeholder="Usuário" />
-    <input id="password" type="password" placeholder="Senha" />
+    <div class="input-group">
+      <input id="username" placeholder="Usuário" />
+      <input id="password" type="password" placeholder="Senha" />
+    </div>
 
-   <button onclick="login()">Entrar</button>
+    <button id="btnLogin">Entrar</button>
 
-    <div id="erro" class="erro">Login inválido</div>
+    <div id="erro" class="erro">Usuário ou senha inválidos</div>
 
     <div class="footer">© StopCar 2026</div>
   </div>
 
+  <!-- ===== JS ===== -->
   <script>
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const btn = document.getElementById("btnLogin");
-    const erro = document.getElementById("erro");
+    document.addEventListener("DOMContentLoaded", () => {
 
-    /* ===== LOGIN ===== */
-async function login() {
-  const username = usernameInput.value;
-  const password = passwordInput.value;
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+      const btn = document.getElementById("btnLogin");
+      const erro = document.getElementById("erro");
 
-  if (!username || !password) return;
+      btn.addEventListener("click", login);
 
-  btn.innerText = "Entrando...";
-  btn.disabled = true;
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") login();
+      });
 
-  try {
-    const res = await fetch("/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
+      async function login() {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!username || !password) {
+          erro.style.display = "block";
+          erro.textContent = "Preencha usuário e senha";
+          return;
+        }
+
+        erro.style.display = "none";
+
+        btn.innerText = "Entrando...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+          });
+
+          const data = await res.json();
+
+          if (!data.success) {
+            erro.style.display = "block";
+            erro.textContent = "Usuário ou senha inválidos";
+            btn.innerText = "Entrar";
+            btn.disabled = false;
+            return;
+          }
+
+          localStorage.setItem("user", JSON.stringify(data.user));
+
+          window.location.href = "dashboard.html";
+
+        } catch (e) {
+          erro.style.display = "block";
+          erro.textContent = "Erro no servidor";
+          btn.innerText = "Entrar";
+          btn.disabled = false;
+        }
+      }
+
     });
-
-    const data = await res.json();
-
-    if (!data.success) {
-      erro.style.display = "block";
-      btn.innerText = "Entrar";
-      btn.disabled = false;
-      return;
-    }
-
-    localStorage.setItem("user", JSON.stringify(data.user));
-
-    window.location.href = "dashboard.html";
-
-  } catch (err) {
-    console.error(err);
-    btn.innerText = "Entrar";
-    btn.disabled = false;
-  }
-}
-
-/* clique */
-btn.addEventListener("click", login);
-
-/* ENTER */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") login();
-});
-
   </script>
 
 </body>
 </html>
+
 
