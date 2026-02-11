@@ -112,7 +112,7 @@
     <input id="username" placeholder="Usuário" />
     <input id="password" type="password" placeholder="Senha" />
 
-    <button id="btnLogin">Entrar</button>
+   <button onclick="login()">Entrar</button>
 
     <div id="erro" class="erro">Login inválido</div>
 
@@ -126,7 +126,7 @@
     const erro = document.getElementById("erro");
 
     /* ===== LOGIN ===== */
-    async function login() {
+async function login() {
   const username = usernameInput.value;
   const password = passwordInput.value;
 
@@ -135,35 +135,41 @@
   btn.innerText = "Entrando...";
   btn.disabled = true;
 
-  const res = await fetch("/login", { // ✅ SEM localhost
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, password })
-  });
+  try {
+    const res = await fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
 
-  const data = await res.json();
+    const data = await res.json();
+
+    if (!data.success) {
+      erro.style.display = "block";
+      btn.innerText = "Entrar";
+      btn.disabled = false;
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+    window.location.href = "dashboard.html";
+
+  } catch (err) {
+    console.error(err);
+    btn.innerText = "Entrar";
+    btn.disabled = false;
+  }
 }
 
+/* clique */
+btn.addEventListener("click", login);
 
-      if (!data.success) {
-        erro.style.display = "block";
-        btn.innerText = "Entrar";
-        btn.disabled = false;
-        return;
-      }
+/* ENTER */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") login();
+});
 
-      localStorage.setItem("user", JSON.stringify(data.user));
-
-      window.location.href = "dashboard.html";
-    
-
-    /* clique */
-    btn.addEventListener("click", login);
-
-    /* ENTER */
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") login();
-    });
   </script>
 
 </body>
