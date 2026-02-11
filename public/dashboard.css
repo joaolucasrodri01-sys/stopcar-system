@@ -1,32 +1,37 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
   background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
+  color: #f1f5f9;
   min-height: 100vh;
-  padding: 25px;
+  padding: 20px;
 }
 
-/* topo */
+
+/* ===== TOPO ===== */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  gap: 10px;
+  flex-wrap: wrap; /* quebra linha no celular */
 }
 
 .topbar h1 {
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .user-box {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -34,29 +39,69 @@ body {
   background: #ef4444;
   border: none;
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
+  transition: .2s;
 }
 
-/* busca */
+.user-box button:hover {
+  background: #dc2626;
+}
+
+
+/* ===== BUSCA ===== */
 .controls input {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background: #1f2937;
+  color: white;
+  outline: none;
+}
+
+
+/* ===== FORMULÁRIO (mobile first) ===== */
+.form-box {
+  display: grid;
+  grid-template-columns: 1fr; /* celular */
+  gap: 10px;
   margin-bottom: 25px;
+}
+
+.form-box input,
+.form-box button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
   font-size: 14px;
 }
 
-/* cards grid */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+.form-box input {
+  background: #1f2937;
+  color: white;
 }
 
-/* card */
+.form-box button {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* ===== GRID CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr; /* celular */
+  gap: 18px;
+}
+
+
+/* ===== CARD ===== */
 .card {
   background: #1f2937;
   padding: 18px;
@@ -65,10 +110,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card h3 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .tag {
@@ -84,43 +134,63 @@ body {
   opacity: .8;
 }
 
-/* botões */
+
+/* ===== BOTÕES ===== */
 .actions {
   display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
+  flex-direction: column; /* empilha no celular */
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .actions button {
   border: none;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .whats { background: #22c55e; color: white; }
 .delete { background: #ef4444; color: white; }
 .done { background: #3b82f6; color: white; }
-/* formulário topo */
-.form-box {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr 1fr;
-  gap: 10px;
-  margin-bottom: 20px;
+
+
+
+/* ============================= */
+/* ===== TABLET (≥ 600px) ===== */
+/* ============================= */
+@media (min-width: 600px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-box {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
 }
 
-.form-box input {
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-}
 
-.form-box button {
-  background: #22c55e;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
+/* ============================= */
+/* ===== DESKTOP (≥ 1024px) ==== */
+/* ============================= */
+@media (min-width: 1024px) {
+
+  body {
+    padding: 30px 60px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .form-box {
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+  }
 }
