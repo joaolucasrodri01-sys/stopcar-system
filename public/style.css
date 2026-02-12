@@ -1,95 +1,132 @@
-body.dark {
-  font-family: Arial;
-  background: linear-gradient(135deg,#0f172a,#1e293b);
-  color: white;
+/* ================================= */
+/* RESET GLOBAL */
+/* ================================= */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-/* HEADER */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #0b1220;
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  padding: 16px;
 }
 
-.user-area {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+/* ================================= */
+/* CONTAINER PADRÃO */
+/* ================================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* FORM */
-.form-area {
-  display: flex;
-  gap: 10px;
-  padding: 20px 40px;
+/* ================================= */
+/* CARDS */
+/* ================================= */
+.card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
 }
 
-.form-area input {
-  flex: 1;
+/* ================================= */
+/* INPUTS */
+/* ================================= */
+input,
+select,
+textarea {
+  width: 100%;
   padding: 12px;
-  border-radius: 8px;
-  border: none;
-}
-
-/* SEARCH */
-.search {
-  margin: 0 40px 20px;
-  padding: 12px;
-  width: calc(100% - 80px);
   border-radius: 10px;
   border: none;
-}
-
-/* CARDS GRID */
-.cards {
-  padding: 0 40px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
-  gap: 20px;
-}
-
-/* CARD */
-.card {
   background: #1e293b;
-  padding: 18px;
-  border-radius: 14px;
-  box-shadow: 0 0 12px rgba(0,0,0,.5);
+  color: white;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+}
+
+/* ================================= */
+/* BOTÕES */
+/* ================================= */
+button {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
   transition: .2s;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
 }
 
-.card h3 {
-  margin: 0 0 8px;
+/* ================================= */
+/* GRID RESPONSIVO */
+/* ================================= */
+.grid {
+  display: grid;
+  gap: 16px;
 }
 
-/* STATUS */
-.badge {
-  background: orange;
-  padding: 3px 8px;
-  border-radius: 8px;
-  font-size: 12px;
+/* desktop */
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* BUTTONS */
-.btn {
-  border: none;
-  padding: 7px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-  margin-right: 5px;
+/* tablet */
+@media (max-width: 900px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.green { background:#22c55e }
-.blue { background:#3b82f6 }
-.red { background:#ef4444 }
-.yellow { background:#f59e0b }
-
-.actions {
-  margin-top: 12px;
+/* mobile */
+@media (max-width: 600px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
 }
+
+/* ================================= */
+/* TABELAS RESPONSIVAS */
+/* ================================= */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* ================================= */
+/* LOGIN CENTRAL */
+/* ================================= */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
