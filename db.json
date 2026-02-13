@@ -31,5 +31,78 @@
       "role": "seller"
     }
   ],
-  "leads": []
+  "leads": [
+    {
+      "id": 1770989392804,
+      "cliente": "kaique",
+      "whats": "35992446220",
+      "modelo": "Meteoro 350",
+      "obs": "Cliente deseja na cor preta",
+      "user": "Carlos_Eduardo",
+      "createdAt": "13/02/2026, 10:29:52"
+    },
+    {
+      "id": 1770989498671,
+      "cliente": "Valdirene",
+      "whats": "35991729585",
+      "modelo": "Hb20",
+      "obs": "Cliente deseja na cor preta",
+      "user": "Valdirene_Financiamento",
+      "createdAt": "13/02/2026, 10:31:38"
+    },
+    {
+      "id": 1770989765380,
+      "cliente": "Gabriel",
+      "whats": "35992446220",
+      "modelo": "Fiat Punto",
+      "obs": "Cliente deseja que seja na cor preta",
+      "user": "Carol_Vendedora",
+      "createdAt": "13/02/2026, 10:36:05"
+    },
+    {
+      "id": 1770989803705,
+      "cliente": "Arão",
+      "whats": "35992446220",
+      "modelo": "Fiat Touro",
+      "obs": "Clienteb deseja que seja 0KM",
+      "user": "Carol_Vendedora",
+      "createdAt": "13/02/2026, 10:36:43"
+    },
+    {
+      "id": 1770989867794,
+      "cliente": "Wladmin",
+      "whats": "3599265616",
+      "modelo": "CG Fan 60",
+      "obs": "Cliente deseja que seja na cor vermelha",
+      "user": "Luciano_Vendedor",
+      "createdAt": "13/02/2026, 10:37:47"
+    },
+    {
+      "id": 1770989920035,
+      "cliente": "Paloma",
+      "whats": "3525215616",
+      "modelo": "VW Nivus",
+      "obs": "Cliente deseja que seja na cor cinza",
+      "user": "Luciano_Vendedor",
+      "createdAt": "13/02/2026, 10:38:40"
+    },
+    {
+      "id": 1770989980628,
+      "cliente": "Yasmim",
+      "whats": "3563126516106",
+      "modelo": "ONIX",
+      "obs": "Cliente deseja que seja 2020 ou mais",
+      "user": "Thales_Vendedor",
+      "createdAt": "13/02/2026, 10:39:40"
+    },
+    {
+      "id": 1770990027234,
+      "cliente": "Leandro",
+      "whats": "35992446220",
+      "modelo": "GOL",
+      "obs": "CLIENTE DESEJA MODELO 2014 ATE 2020",
+      "user": "Thales_Vendedor",
+      "createdAt": "13/02/2026, 10:40:27"
+    }
+  ]
 }

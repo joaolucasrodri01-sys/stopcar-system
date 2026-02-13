@@ -2,131 +2,55 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>StopCar • Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard StopCar</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      padding: 30px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    /* ===== FORM ===== */
-    .form {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-
-    input {
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      width: 180px;
-    }
-
-    #buscar {
-      width: 100%;
-      max-width: 400px;
-      margin: 15px auto 25px auto;
-      display: block;
-    }
-
-    button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .btn-add { background: #22c55e; color: white; }
-    .btn-edit { background: #facc15; }
-    .btn-del { background: #ef4444; color: white; }
-    .btn-whats { background: #25d366; color: white; }
-
-    /* ===== CARDS ===== */
-    #lista {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-      color: #60a5fa;
-    }
-
-    .actions {
-      margin-top: 10px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-  </style>
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
+
 <body>
+  <div class="container">
 
-  <h1>🚗 Dashboard StopCar</h1>
+    <h1>🚗 StopCar Dashboard</h1>
 
-  <!-- ===== FORM ===== -->
-  <div class="form">
-    <input id="nome" placeholder="Nome do cliente" />
-    <input id="telefone" placeholder="Telefone WhatsApp" />
-    <input id="modelo" placeholder="Modelo do carro" />
-    <button id="btnCadastrar" class="btn-add">Cadastrar</button>
+    <!-- ===== FORM ===== -->
+    <div class="form">
+      <input id="cliente" placeholder="Nome do cliente">
+      <input id="whats" placeholder="Telefone / WhatsApp">
+      <input id="modelo" placeholder="Modelo do carro">
+      <textarea id="obs" placeholder="Observação"></textarea>
+
+      <button id="btnCadastrar" class="green">Cadastrar</button>
+    </div>
+
+    <input id="buscar" placeholder="Buscar por modelo...">
+
+    <div id="lista" class="list"></div>
   </div>
 
-  <!-- ===== BUSCA ===== -->
-  <input id="buscar" placeholder="Buscar por modelo..." />
+  <!-- ===== MODAL EDITAR ===== -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
 
-  <!-- ===== LISTA ===== -->
-  <div id="lista"></div>
+      <h2>Editar Lead</h2>
 
+      <input id="eCliente">
+      <input id="eWhats">
+      <input id="eModelo">
+      <textarea id="eObs"></textarea>
 
-  <!-- ===== SCRIPT ===== -->
+      <div class="modal-actions">
+        <button id="salvarEdit" class="blue">Salvar</button>
+        <button onclick="fecharModal()" class="red">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+
   <script src="dashboard.js"></script>
-
-  <script>
-    /* ================= PROTEÇÃO ANTI-NULL ================= */
-    const nome = document.getElementById("nome");
-    const telefone = document.getElementById("telefone");
-    const modelo = document.getElementById("modelo");
-    const btnCadastrar = document.getElementById("btnCadastrar");
-
-    if (!nome || !telefone || !modelo || !btnCadastrar) {
-      console.error("❌ IDs do HTML não encontrados. Verifique o dashboard.html");
-    } else {
-      btnCadastrar.addEventListener("click", cadastrar);
-    }
-  </script>
-
 </body>
 </html>
+
+
 
 

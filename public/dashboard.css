@@ -1,196 +1,114 @@
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
 }
 
-body {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #f1f5f9;
-  min-height: 100vh;
-  padding: 20px;
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:white;
+  min-height:100vh;
+  padding:20px;
 }
 
-
-/* ===== TOPO ===== */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  gap: 10px;
-  flex-wrap: wrap; /* quebra linha no celular */
+.container{
+  max-width:1100px;
+  margin:auto;
 }
 
-.topbar h1 {
-  font-size: 24px;
-  font-weight: 600;
+h1{
+  text-align:center;
+  margin-bottom:20px;
 }
 
-.user-box {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+/* ===== FORM ===== */
+.form{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:10px;
+  margin-bottom:15px;
 }
 
-.user-box button {
-  background: #ef4444;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  transition: .2s;
+input, textarea{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  background:#1e293b;
+  color:white;
 }
 
-.user-box button:hover {
-  background: #dc2626;
+textarea{
+  resize:none;
 }
 
-
-/* ===== BUSCA ===== */
-.controls input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
-  margin-bottom: 20px;
-  font-size: 14px;
-  background: #1f2937;
-  color: white;
-  outline: none;
+/* ===== BUTTON ===== */
+button{
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
+.green{background:#22c55e}
+.blue{background:#3b82f6}
+.red{background:#ef4444}
 
-/* ===== FORMULÁRIO (mobile first) ===== */
-.form-box {
-  display: grid;
-  grid-template-columns: 1fr; /* celular */
-  gap: 10px;
-  margin-bottom: 25px;
+/* ===== CARDS ===== */
+.list{
+  display:grid;
+  gap:10px;
 }
 
-.form-box input,
-.form-box button {
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
-  font-size: 14px;
+.card{
+  background:#1e293b;
+  padding:15px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
 
-.form-box input {
-  background: #1f2937;
-  color: white;
+.actions{
+  display:flex;
+  gap:6px;
 }
 
-.form-box button {
-  background: #22c55e;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+/* ===== MODAL ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-
-/* ===== GRID CARDS ===== */
-.cards {
-  display: grid;
-  grid-template-columns: 1fr; /* celular */
-  gap: 18px;
+.hidden{
+  display:none;
 }
 
-
-/* ===== CARD ===== */
-.card {
-  background: #1f2937;
-  padding: 18px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.4);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: .2s;
+.modal-box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  width:90%;
+  max-width:350px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.modal-actions{
+  display:flex;
+  gap:8px;
 }
 
-.card h3 {
-  font-size: 18px;
-}
-
-.tag {
-  background: #f59e0b;
-  padding: 4px 10px;
-  border-radius: 50px;
-  font-size: 12px;
-  width: fit-content;
-}
-
-.info {
-  font-size: 14px;
-  opacity: .8;
-}
-
-
-/* ===== BOTÕES ===== */
-.actions {
-  display: flex;
-  flex-direction: column; /* empilha no celular */
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.actions button {
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.whats { background: #22c55e; color: white; }
-.delete { background: #ef4444; color: white; }
-.done { background: #3b82f6; color: white; }
-
-
-
-/* ============================= */
-/* ===== TABLET (≥ 600px) ===== */
-/* ============================= */
-@media (min-width: 600px) {
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .form-box {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .actions {
-    flex-direction: row;
+@media(max-width:600px){
+  .card{
+    flex-direction:column;
   }
 }
 
 
-/* ============================= */
-/* ===== DESKTOP (≥ 1024px) ==== */
-/* ============================= */
-@media (min-width: 1024px) {
-
-  body {
-    padding: 30px 60px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-
-  .form-box {
-    grid-template-columns: 2fr 1fr 2fr 1fr;
-  }
-}
