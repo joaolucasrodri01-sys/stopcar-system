@@ -26,83 +26,57 @@
     },
     {
       "id": 5,
-      "username": "Thales_Vendedor",
+      "username": "Rafael_Vendedor",
       "password": "StopCar",
       "role": "seller"
+    },
+    {
+      "id": 6,
+      "username": "Thales_admin",
+      "password": "StopCar",
+      "role": "admin"
     }
   ],
   "leads": [
     {
-      "id": 1770989392804,
-      "cliente": "kaique",
+      "id": 1772484491203,
+      "cliente": "João Lucas",
       "whats": "35992446220",
-      "modelo": "Meteoro 350",
-      "obs": "Cliente deseja na cor preta",
-      "user": "Carlos_Eduardo",
-      "createdAt": "13/02/2026, 10:29:52"
-    },
-    {
-      "id": 1770989498671,
-      "cliente": "Valdirene",
-      "whats": "35991729585",
-      "modelo": "Hb20",
-      "obs": "Cliente deseja na cor preta",
+      "modelo": "VW Nivus",
+      "obs": "",
+      "status": "Novo",
       "user": "Valdirene_Financiamento",
-      "createdAt": "13/02/2026, 10:31:38"
+      "createdAt": "2026-03-02T20:48:11.200Z"
     },
     {
-      "id": 1770989765380,
+      "id": 1772484504233,
       "cliente": "Gabriel",
       "whats": "35992446220",
-      "modelo": "Fiat Punto",
-      "obs": "Cliente deseja que seja na cor preta",
-      "user": "Carol_Vendedora",
-      "createdAt": "13/02/2026, 10:36:05"
+      "modelo": "Jetta",
+      "obs": "",
+      "status": "Novo",
+      "user": "Valdirene_Financiamento",
+      "createdAt": "2026-03-02T20:48:24.230Z"
     },
     {
-      "id": 1770989803705,
-      "cliente": "Arão",
+      "id": 1772484531401,
+      "cliente": "Juan",
       "whats": "35992446220",
-      "modelo": "Fiat Touro",
-      "obs": "Clienteb deseja que seja 0KM",
-      "user": "Carol_Vendedora",
-      "createdAt": "13/02/2026, 10:36:43"
+      "modelo": "Jeep-Renegade",
+      "obs": "",
+      "status": "Novo",
+      "user": "Rafael_Vendedor",
+      "createdAt": "2026-03-02T20:48:51.398Z"
     },
     {
-      "id": 1770989867794,
-      "cliente": "Wladmin",
-      "whats": "3599265616",
-      "modelo": "CG Fan 60",
-      "obs": "Cliente deseja que seja na cor vermelha",
-      "user": "Luciano_Vendedor",
-      "createdAt": "13/02/2026, 10:37:47"
-    },
-    {
-      "id": 1770989920035,
-      "cliente": "Paloma",
-      "whats": "3525215616",
+      "id": 1772484547708,
+      "cliente": "Nathan",
+      "whats": "35992446220",
       "modelo": "VW Nivus",
-      "obs": "Cliente deseja que seja na cor cinza",
-      "user": "Luciano_Vendedor",
-      "createdAt": "13/02/2026, 10:38:40"
-    },
-    {
-      "id": 1770989980628,
-      "cliente": "Yasmim",
-      "whats": "3563126516106",
-      "modelo": "ONIX",
-      "obs": "Cliente deseja que seja 2020 ou mais",
-      "user": "Thales_Vendedor",
-      "createdAt": "13/02/2026, 10:39:40"
-    },
-    {
-      "id": 1770990027234,
-      "cliente": "Leandro",
-      "whats": "35992446220",
-      "modelo": "GOL",
-      "obs": "CLIENTE DESEJA MODELO 2014 ATE 2020",
-      "user": "Thales_Vendedor",
-      "createdAt": "13/02/2026, 10:40:27"
+      "obs": "Preto",
+      "status": "Novo",
+      "user": "Rafael_Vendedor",
+      "createdAt": "2026-03-02T20:49:07.706Z"
     }
   ]
 }
